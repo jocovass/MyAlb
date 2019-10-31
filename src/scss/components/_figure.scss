@@ -1,0 +1,80 @@
+.figure {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  width: 100%;
+  break-inside: avoid;
+
+  &__pic {
+    display: block;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-primary;
+    cursor: pointer;
+
+    &--heart {
+      margin-left: 2rem;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-secondary-dark, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // transform: translateY(100%);
+    // opacity: 0;
+    // transition: transform 0.4s ease-in-out, opacity 0.8s ease-in-out;
+
+    &--top {
+      display: flex;
+      padding: 1rem;
+    }
+
+    &--bottom {
+      padding: 1rem;
+    }
+  }
+
+  //   &:hover &__caption {
+  //     transform: translateY(0%);
+  //     opacity: 1;
+  //   }
+
+  &__author {
+    margin-right: auto;
+  }
+
+  &__desc {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  .liked {
+    fill: $color-error;
+    animation: bounce 0.4s ease-in-out;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

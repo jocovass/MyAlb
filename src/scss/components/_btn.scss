@@ -1,0 +1,46 @@
+%btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn {
+  &,
+  &:link,
+  &:focus {
+    @extend %btn;
+    background-color: $color-secondary;
+    color: $color-primary;
+    padding: 0.55rem 1.3rem;
+    border-radius: 4px;
+    @include shadow;
+  }
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-secondary;
+  }
+
+  &--danger,
+  &--danger:link,
+  &--danger:focus {
+    background-color: $color-error;
+
+    &:hover {
+      background-color: rgba($color-error, 0.9);
+      color: $color-primary;
+    }
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:focus {
+      @extend %btn;
+      border-bottom: 1px solid $color-secondary-dark;
+    }
+  }
+}
+
+.btn-nav {
+  @extend %btn;
+}

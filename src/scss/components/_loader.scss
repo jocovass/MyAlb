@@ -1,0 +1,27 @@
+.loader {
+  &-container {
+    position: absolute;
+    margin-right: 10px;
+  }
+
+  &-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid $color-background-dark;
+    border-top-color: $color-accent;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

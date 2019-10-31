@@ -1,0 +1,54 @@
+.warning {
+  background-color: $color-background-light;
+  width: 90%;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid $color-background-dark;
+  @include shadow;
+  display: flex;
+  align-items: center;
+
+  &__icon-triangle {
+    fill: rgb(252, 214, 0);
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__icon-check {
+    fill: $color-accent-dark;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__left-side {
+    padding-right: 2rem;
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__body {
+    margin-bottom: 1rem;
+  }
+
+  &__footer {
+    display: flex;
+
+    .warning__left-side {
+      padding-right: 1rem;
+    }
+  }
+
+  @include mq(medium) {
+    margin-top: 2rem;
+  }
+}

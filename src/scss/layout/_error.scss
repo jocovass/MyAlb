@@ -1,0 +1,25 @@
+.error-global {
+  width: 90%;
+  margin: 4rem auto 0;
+  text-align: center;
+
+  &__message {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  &__picture {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 150px;
+    margin-bottom: 2rem;
+
+    @include mq(medium) {
+      width: 200px;
+    }
+  }
+}

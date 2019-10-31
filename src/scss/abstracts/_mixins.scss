@@ -1,0 +1,18 @@
+@mixin shadow {
+  box-shadow: 0.1rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+$breakpoints: (
+  small: 34.5em,
+  medium: 34.5em,
+  large: 62.5em,
+  xLarge: 87.5em
+);
+
+@mixin mq($size) {
+  $breakpoint: map-get($breakpoints, $size);
+
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

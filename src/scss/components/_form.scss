@@ -1,0 +1,79 @@
+.form {
+  &__wrapper {
+    background-color: $color-background-light;
+    border: 2px solid $color-background-dark;
+    padding: 4rem 2rem 3rem;
+    width: 85%;
+    max-width: 38rem;
+    margin: 5rem auto 0;
+    border-radius: 5px;
+    @include shadow;
+    text-align: center;
+  }
+
+  &__section--top {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba($color-accent, 0.5);
+  }
+
+  &__row {
+    width: 100%;
+    position: relative;
+  }
+
+  &__label {
+    pointer-events: none;
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    background-color: $color-primary;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 1px 3px;
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: none;
+    border: 2px solid rgba($color-accent, 0.5);
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+
+  &__input:focus + &__label,
+  .filled__label.valid {
+    border-color: $color-accent;
+    transform: translateY(-23px);
+  }
+
+  .filled__input.valid {
+    border-color: $color-accent;
+  }
+
+  .filled__input.error,
+  .empty__input.error {
+    border-color: rgba($color-error, 0.6);
+  }
+
+  .empty__label.error {
+    border-color: transparent;
+  }
+
+  &__input:focus + .empty__label.error {
+    border-color: rgba($color-error, 0.6);
+    transform: translateY(-23px);
+  }
+
+  &__input + .filled__label.error {
+    border-color: rgba($color-error, 0.6);
+    transform: translateY(-23px);
+  }
+}

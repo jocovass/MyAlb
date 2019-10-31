@@ -1,0 +1,161 @@
+body {
+  font-family: 'PT Sans Narrow';
+  color: $color-primary;
+  letter-spacing: 1px;
+}
+
+button {
+  font-family: 'PT Sans Narrow';
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.heading-primary {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+  &__sub {
+    font-size: 1.6rem;
+  }
+}
+
+.heading-secondary {
+  color: $color-secondary;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.heading-tertiary {
+  color: $color-secondary;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heading-fourth {
+  color: $color-secondary;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.btn {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+
+  &__link {
+    font-size: 1.4rem;
+    color: $color-secondary-dark;
+  }
+}
+
+.avatar {
+  &__data {
+    font-size: 1.6rem;
+    color: $color-secondary-dark;
+  }
+}
+
+.form {
+  &__label {
+    color: $color-secondary;
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    font-size: 1.6rem;
+    color: $color-secondary;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    color: $color-secondary;
+  }
+}
+
+.validation-error,
+.validation-succeeded {
+  display: block;
+  font-size: 1.3rem;
+  margin: 5px 10px;
+}
+
+.validation-error {
+  color: $color-error;
+}
+
+.validation-succeeded {
+  color: $color-accent-dark;
+}
+
+.search {
+  &__input {
+    font-size: 1.6rem;
+    color: $color-secondary;
+  }
+}
+
+.figure {
+  font-size: 1.6rem;
+}
+
+.warning {
+  &__text {
+    color: $color-secondary;
+    font-size: 1.6rem;
+  }
+}
+
+.footer__text {
+  font-size: 1.4rem;
+  color: $color-secondary;
+}
+
+@include mq(medium) {
+  .heading-primary {
+    font-size: 4.5rem;
+
+    &__sub {
+      font-size: 1.8rem;
+    }
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.5rem;
+  }
+
+  .heading-fourth {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+
+    &__link {
+      font-size: 1.6rem;
+    }
+  }
+
+  .warning__text {
+    font-size: 1.8rem;
+  }
+
+  .footer__text {
+    font-size: 1.6rem;
+  }
+}
+
+@include mq(large) {
+  .heading-primary {
+    font-size: 5.5rem;
+  }
+}

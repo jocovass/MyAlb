@@ -1,0 +1,23 @@
+.gallery {
+  position: relative;
+  width: 95%;
+  max-width: 1300px;
+  margin: 3rem auto 0;
+
+  &__content {
+    column-count: 1;
+
+    @include mq(medium) {
+      column-count: 2;
+      column-gap: 2rem;
+    }
+
+    @include mq(large) {
+      column-count: 3;
+    }
+
+    @include mq(xLarge) {
+      column-count: 4;
+    }
+  }
+}

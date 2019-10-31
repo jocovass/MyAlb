@@ -1,0 +1,7 @@
+.logo {
+  width: 10rem;
+
+  @include mq(large) {
+    width: 12rem;
+  }
+}
