@@ -38,14 +38,14 @@ class App extends React.Component {
             <React.Fragment>
                 <div className="main-content">
                     <Header />
-                    <Route path="/" exact component={Search} />
+                    <Route path={process.env.PUBLIC_URL + "/"} exact component={Search} />
                     { warn }
-                    <Route path="/" exact component={Gallery} />
-                    <Route path="/login" component={asyncLogin} />
-                    <Route path="/signup" component={asyncSignup} />
-                    <Route path="/resetPassword" component={asyncPassword} />
-                    <Route path="/likes" component={asyncLikes} />
-                    <Route path="/error" component={asyncError} />
+                    <Route path={process.env.PUBLIC_URL + "/"} exact component={Gallery} />
+                    <Route path={process.env.PUBLIC_URL + "/login"} component={asyncLogin} />
+                    <Route path={process.env.PUBLIC_URL + "/signup"} component={asyncSignup} />
+                    <Route path={process.env.PUBLIC_URL + "/resetPassword"} component={asyncPassword} />
+                    <Route path={process.env.PUBLIC_URL + "/likes"} component={asyncLikes} />
+                    <Route path={process.env.PUBLIC_URL + "/error"} component={asyncError} />
                 </div>
                 <Footer />
             </React.Fragment>
