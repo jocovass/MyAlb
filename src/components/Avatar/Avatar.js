@@ -17,11 +17,11 @@ const Avatar = () => {
         return data;
     }
     return (
-        <div className="avatar__container">
+        <div className="avatar__container"
+             onClick={onAvatarClick} >
             <img className="avatar_pic" 
                  alt="User avatar" 
-                 src={avatar}
-                 onClick={onAvatarClick} />
+                 src={avatar} />
             { renderAvatarData() }
         </div>
     );

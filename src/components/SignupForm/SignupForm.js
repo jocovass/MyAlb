@@ -34,11 +34,16 @@ const SignupForm = props => {
                     { props.error && 
                     <strong className="validation-error">{ props.error }</strong> }
                     { props.submitting ? ( <div style={{
-                                                width: '40px',
+                                                width: "40px",
                                                 height: "40px",
-                                                margin: "0 auto 15px"
+                                                margin: "0 auto 15px",
+                                                position: "relative",
                                             }}>
-                                                <Loader />
+                                                <Loader width="100%"
+                                                        height="100%"
+                                                        top="0"
+                                                        left="0"
+                                                        transform="translate(0%,0%)"/>
                                             </div> ) 
                                         : null }
                     <button className="btn mr-small" 
