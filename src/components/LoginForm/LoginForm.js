@@ -38,7 +38,10 @@ const LoginForm = props => {
                             type="password"
                             component={renderInput} 
                             validate={[required, minValue, requiredNum]} />
-                    <strong className="validation-error">{ props.error }</strong> }
+                    { 
+                        props.error && 
+                        <strong className="validation-error">{ props.error }</strong> 
+                    }
                     { props.submitting ? ( <div style={{
                                                 width: "40px",
                                                 height: "40px",

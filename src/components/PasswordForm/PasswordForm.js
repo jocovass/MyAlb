@@ -24,11 +24,15 @@ const PasswordForm = (props) => {
                         component={renderInput}
                         type="email"
                         validate={[required, emailCheck]} />
-                <strong className="validation-error">{ props.error }</strong>
+                { 
+                    props.error && 
+                    <strong className="validation-error">{ props.error }</strong> 
+                }
+                
                 { 
                   props.submitSucceeded && !props.error
-                  ? <strong className="validation-succeeded">Email has been sent!</strong>
-                  : null
+                    ? <strong className="validation-succeeded">Email has been sent!</strong>
+                    : null
                 }
                 { props.submitting ? ( <div style={{
                                                 width: "40px",
