@@ -1,27 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { onFetchDb } from '../../store/actions/db';
 import Pic from '../../components/Pic/Pic';
 import Loader from '../../components/UI/Loader/Loader';
 
 class Likes extends React.Component {
-    componentDidMount() {
-        if(this.props.userId) {
-            this.props.onFetchDb(this.props.userId);
-        }
-    }
-
-    componentDidUpdate() {
-        if(!this.props.imgs) {
-            this.props.onFetchDb(this.props.userId);
-        }
-    }
 
     renderPictures = () => {
         if(this.props.imgs === false) {
             return <Loader width="80px"
                     height="80px"
-                    top="7rem" 
+                    top="7rem"
                     left="50%"
                     transform="translate(-50%,0%)"/>;
         } else {
@@ -52,9 +40,8 @@ class Likes extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        userId: state.authReducer.userId,
         imgs: state.dbReducer.imgs,
     }
 }
 
-export default connect(mapStateToProps, { onFetchDb })(Likes);
+export default connect(mapStateToProps)(Likes);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { onFetchDb } from '../store/actions/db';
 import Header from './Header/Header';
 import Search from './Search/Search';
 import Gallery from './Gallery/Gallery';
@@ -29,6 +30,18 @@ const asyncError = asyncComp(() => {
 })
 
 class App extends React.Component {
+    componentDidMount() {
+        if(this.props.userId) {
+            this.props.onFetchDb(this.props.userId);
+        }
+    }
+
+    componentDidUpdate() {
+        if(!this.props.imgs) {
+            this.props.onFetchDb(this.props.userId);
+        }
+    }
+
     render() {
         let warn = null;
         if(!this.props.verified && this.props.isSignedIn && !this.props.error) {
@@ -55,10 +68,11 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
     return {
+        userId: state.authReducer.userId,
         verified: state.authReducer.verified,
         isSignedIn: state.authReducer.isSignedIn,
         error: state.authReducer.error,
     };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { onFetchDb })(App);
